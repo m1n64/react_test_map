@@ -1,0 +1,7 @@
+.cardsBlock {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: 100px auto;
+    flex-wrap: wrap;
+}
