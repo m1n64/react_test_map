@@ -1,36 +1,56 @@
 import React from 'react';
 import './App.css';
-import Header from "./components/Header/Header";
-import Card from "./components/Card/Card";
+import Header, { link } from "./components/Header/Header";
+import Card, { propsType as card } from "./components/Card/Card";
 
 function App() {
-    const searchLinks = [
+    const searchLinks: link[] = [
         {
-            name: "google",
-            link: "https://www.google.com/"
+            name: "Мой аккаунт",
+            link: "/profile/"
         },
         {
-            name: "yandex",
-            link: "https://yandex.ru/"
+            name: "Доставки",
+            link: "/delivery/"
         },
         {
-            name: "yahoo",
-            link: "https://ru.search.yahoo.com/"
+            name: "Корзина",
+            link: "/cart/"
         }
-    ]
+    ];
+
+    const cards: card[] = [
+        {
+            name: "Я помню пенис большой",
+            description: "Пенис пенис пися пися говно говно жопа жопа член пизда говно стас пидор"
+        },
+        {
+            name: "Я знаю пенис большой",
+            description: "Пенис пенис пися пися говно говно жопа жопа член пизда говно стас пидор"
+        },
+        {
+            name: "Я помню пенис. большой",
+            description: "Пенис пенис пися пися говно говно жопа жопа член пизда говно стас пидор"
+        },
+        {
+            name: "Я помню ооооооо",
+            description: "Пенис пенис пися пися говно говно жопа жопа член пизда говно стас пидор"
+        },
+        {
+            name: "Я помню пенис большой",
+            description: "Пенис пенис пися пися говно говно жопа жопа член пизда говно стас пидор"
+        }
+    ];
 
     return (
         <div className="App">
             <Header text={"wildberriesANALog"} links={searchLinks}/>
 
             <section className="cardsBlock">
-                <Card name={"Пенис длинный 15см"}
-                      description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, libero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, libero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, libero."}/>
-                <Card name={"Анальная затычка"}
-                      description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, libero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, libero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, libero."}/>
-                <Card name={"Костюм медсестры"}
-                      description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, libero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, libero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, libero."}/>
-
+                {cards.length ? cards.map(card => 
+                    <Card name={card.name} description={card.description} />)
+                    : <div>Товаров нету :(</div>
+                }
             </section>
         </div>
     );

@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import style from './card.module.scss';
 
-type propsType = {
+export type propsType = {
     name: string;
     description: string;
 }

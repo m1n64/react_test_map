@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import style from './header.module.scss';
 
-type link = {
+export type link = {
     name: string;
     link: string;
 }
