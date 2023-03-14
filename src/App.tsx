@@ -6,7 +6,7 @@ import Card from "./components/Card/Card";
 function App() {
     const searchLinks = [
         {
-            name: "googl",
+            name: "google",
             link: "https://www.google.com/"
         },
         {
